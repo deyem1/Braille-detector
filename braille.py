@@ -10,7 +10,7 @@ try:
     import pandas as pd
 
     st.title('Braille Detector:book:')
-    st.subheader('upload an image to detect :red[braille]')
+    st.subheader('upload an image to detect :blue[braille]')
     # img_file_buffer = st.camera_input("Take a picture")
 
 
