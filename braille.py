@@ -47,7 +47,7 @@ try:
         cv2_imgg = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
 
         print('got here2')
-        new_model = load_model('brailleclassifier2.h5',
+        new_model = load_model('brailleclassifier3.h5',
                                compile=False)
         print('got here2')
 
