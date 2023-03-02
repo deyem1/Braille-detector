@@ -1,22 +1,16 @@
 import streamlit as st
 
 try:
-    print('got here a')
-
     from  tensorflow.keras.models import load_model
     # import cv2
     import cv2
-
-    print('got here pastimport')
-
     import tensorflow as tf
     # import os
-
-
     import numpy as np
     import pandas as pd
 
     st.title('Braille Detector:book:')
+    st.subheader('upload an image to detect :red[braille]')
     # img_file_buffer = st.camera_input("Take a picture")
 
 
@@ -29,9 +23,9 @@ try:
         print(yhat)
 
         if yhat > 0.5:
-            st.error('Predicted class is not braille :thumbsdown:')
+            st.error('Predicted class is probably not braille :thumbsdown:')
         else:
-            st.success('Predicted class is Braille :thumbsup:')
+            st.success('Predicted class is probably Braille or has braille within the image :thumbsup:')
 
     # if img_file_buffer is not None:
     #     st.image(img_file_buffer)
@@ -53,7 +47,7 @@ try:
         cv2_imgg = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
 
         print('got here2')
-        new_model = load_model('brailleclassifierrr1.h5',
+        new_model = load_model('brailleclassifier3.h5',
                                compile=False)
         print('got here2')
 
